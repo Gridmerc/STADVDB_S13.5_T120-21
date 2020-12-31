@@ -1,0 +1,19 @@
+{
+  "name": "stadvdb_s13.5_t120-21",
+  "version": "1.0.0",
+  "description": "This project is for the submission of MCO1.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gridmerc/STADVDB_S13.5_T120-21.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gridmerc/STADVDB_S13.5_T120-21/issues"
+  },
+  "homepage": "https://github.com/Gridmerc/STADVDB_S13.5_T120-21#readme"
+}

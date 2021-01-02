@@ -3,16 +3,16 @@ const express = require('express');
 const mysql = require('mysql');
 const port = 5000;
 
-var path = require('path');
-
 // Database
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'p@ssword',
     port: '3306',
-    database: 'northwind'
+    database: 'nodemysql'
 });
+
+// Connect MySQL to the database based from the parameters of the connection
 
 db.connect(function(err) {
     if(err) throw err;
@@ -21,10 +21,36 @@ db.connect(function(err) {
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'hbs');
+
+app.use(express.urlencoded({extended: true}));
+
+app.use(express.static('public'));
+
+// This is a sample code for creating a database (schema)
+
+app.get('/createDB', function(req, res) {
+    let sql = 'CREATE DATABASE nodemysql';
+    db.query(sql, function(err, result) {
+        if(err) throw err;
+        res.send('Database created...');
+        console.log(result);
+    });
+});
+
+// This is a sample code for creating a table in the chosen dataset
+
+app.get('/createTable', function(req, res) {
+    let sql = 'CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY (id))';
+    db.query(sql, function(err, result) {
+        if(err) throw err;
+        console.log(result);
+        res.send('Table created...');
+    });
+});
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.render('home');
 });
 
 app.listen(port, function() {

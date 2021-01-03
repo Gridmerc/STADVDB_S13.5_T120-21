@@ -9,7 +9,7 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'p@ssword',
     port: '3306',
-    database: 'nodemysql'
+    database: 'northwind'
 });
 
 // Connect MySQL to the database based from the parameters of the connection
@@ -49,8 +49,36 @@ app.get('/createTable', function(req, res) {
     });
 });
 
+app.get('/getCategories', (req, res) => {
+    let query = 'SELECT * FROM CATEGORIES;';
+    db.query(query, (err, result) => {
+        if(err) throw err;
+        console.log('Northwind: ');
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/insertNewCustomer', (req, res) => {
+    let customer = {
+        customerid: 'HATDG',
+        companyname: 'Heil Adolf Titler',
+        address: 'Sieg St.',
+        region: 'PH',
+        postalcode: '69696',
+        country: 'Philippines'
+    };
+    let query = 'INSERT INTO CUSTOMERS SET ?';
+    db.query(query, customer, (err, result) => {
+        if(err) throw err;
+        console.log('New Customer added with ID: ' + result);
+        res.send(result);
+    });
+});
+
 app.get('/', function(req, res) {
-    res.render('home');
+    //res.render('home');
+    res.send('You are in the home page.');
 });
 
 app.listen(port, function() {

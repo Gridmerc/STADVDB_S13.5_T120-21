@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-        <title> Home Page </title>
-    </head>
-    <body>
-        <h1> This is a sample header. </h1>
-        <h2> This is a sample sub-header. </h2>
-    </body>
-</html>
+<h1>QUERIES</h1>
+<form>
+        <div class ="row">
+            <input id = "query" type = "text" class ="form-control-lg col-lg-12 mt-1 mb-3 " placeholder = "textbox for query">
+        </div>
+        <div class = "row">
+            <button id="submit" class = "form-control form-control-lg btn btn-primary col-lg-3">SUBMIT</button>
+        </div>
+        <hr class ="my-4">
+        {{>rTables}}
+</form>

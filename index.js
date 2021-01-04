@@ -77,8 +77,8 @@ app.get('/insertNewCustomer', (req, res) => {
 });
 
 app.get('/', function(req, res) {
-    //res.render('home');
-    res.send('You are in the home page.');
+    res.render('home');
+    //res.send('You are in the home page.');
 });
 
 app.listen(port, function() {

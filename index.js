@@ -1,28 +1,35 @@
 // Modules
 const express = require('express');
-const mysql = require('mysql');
-const port = 5000;
+const hbs = require('express-handlebars');
+const handlebars = require('handlebars');
 
-// Database
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'p@ssword',
-    port: '3306',
-    database: 'northwind'
-});
+//const bodyparser = require('body-parser');
+const port = 5000;
+const app = express();
+const PublicRoutes = require('./routes/PublicRoutes');
 
 // Connect MySQL to the database based from the parameters of the connection
+const db = require('./database');
 
 db.connect(function(err) {
     if(err) throw err;
     console.log('MySQL connected successfully...');
 });
 
-const app = express();
+//setting up view engine
+app.engine('hbs', hbs({
+    extname: 'hbs',
+    defaultView: 'default',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/'
+}));
+app.use(express.static(path.join(__dirname,'public')));
+app.use('/', PublicRoutes);
+app.listen(port, function() {
+    console.log('The application is running at port ' + port);
+});
 
-app.set('view engine', 'hbs');
-
+/*
 app.use(express.urlencoded({extended: true}));
 
 app.use(express.static('public'));
@@ -75,12 +82,4 @@ app.get('/insertNewCustomer', (req, res) => {
         res.send(result);
     });
 });
-
-app.get('/', function(req, res) {
-    res.render('home');
-    //res.send('You are in the home page.');
-});
-
-app.listen(port, function() {
-    console.log('The application is running at port ' + port);
-});
+*/

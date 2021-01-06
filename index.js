@@ -2,6 +2,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const handlebars = require('handlebars');
+const path=require('path');
 
 //const bodyparser = require('body-parser');
 const port = 5000;
@@ -15,6 +16,8 @@ db.connect(function(err) {
     if(err) throw err;
     console.log('MySQL connected successfully...');
 });
+
+app.set('view engine', 'hbs');
 
 //setting up view engine
 

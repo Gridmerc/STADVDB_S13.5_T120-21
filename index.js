@@ -2,6 +2,7 @@
 const express = require('express');
 const handlebars = require('handlebars');
 const path=require('path');
+const bodyparser = require('body-parser');
 const hbs = require('express-handlebars').create({
     extname: 'hbs',
     defaultView: 'default',
@@ -22,10 +23,13 @@ db.connect(function(err) {
     console.log('MySQL connected successfully...');
 });
 
+//api enpoint data handling
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true}));
+
 //app.set('view engine', 'hbs');
 
 //setting up view engine
-
 app.engine('hbs', hbs.engine); 
 
 app.set('view engine', 'hbs');

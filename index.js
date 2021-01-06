@@ -26,9 +26,9 @@ db.connect(function(err) {
 
 //setting up view engine
 
-app.engine('handlebars', hbs.engine); 
+app.engine('hbs', hbs.engine); 
 
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 
 app.use(express.static(path.join(__dirname,'public')));
 app.use('/', PublicRoutes);

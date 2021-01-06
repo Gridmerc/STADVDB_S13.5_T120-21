@@ -1,9 +1,7 @@
 const db = require('../database');
 
 exports.HomePage = function(req, res) {
-    res.render('home',{
-        title:"HOMEPAGE"
-    })  
+    res.render('home');  
 };
 
 exports.QueryDisplay = function(req, res){

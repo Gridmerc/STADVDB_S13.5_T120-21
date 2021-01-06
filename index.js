@@ -1,8 +1,13 @@
 // Modules
 const express = require('express');
-const hbs = require('hbs');
 const handlebars = require('handlebars');
 const path=require('path');
+const hbs = require('express-handlebars').create({
+    extname: 'hbs',
+    defaultView: 'default',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/'
+});
 
 //const bodyparser = require('body-parser');
 const port = 5000;
@@ -17,18 +22,13 @@ db.connect(function(err) {
     console.log('MySQL connected successfully...');
 });
 
-app.set('view engine', 'hbs');
+//app.set('view engine', 'hbs');
 
 //setting up view engine
 
-app.engine('hbs', hbs.create({
-    extname: 'hbs',
-    defaultView: 'default',
-    layoutsDir: __dirname + '/views/layouts/',
-    partialsDir: __dirname + '/views/partials/'
-})); 
+app.engine('handlebars', hbs.engine); 
 
-app.set('view engine', 'hbs');
+app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname,'public')));
 app.use('/', PublicRoutes);

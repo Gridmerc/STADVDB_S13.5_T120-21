@@ -26,7 +26,7 @@ $(document).ready(function(){
 
             $.ajax({
                 type:"POST",
-                url: "/investigate",
+                url: "/QueryDisplay",
                 data:{ query },
                 success: (response) =>{
                     const tableName = $('.table-name');

@@ -5,16 +5,16 @@ exports.HomePage = function(req, res) {
 };
 
 exports.QueryDisplay = function(req, res){
-    const investigate = req.body.query;
+    const query = req.body.query;
 
-    db.query(investigate,(err,results,fields) =>{
+    db.query(query,(err,results,fields) =>{
         if (err) throw err;
         
         const map = fields.map(fieldPacket =>{
             return fieldPacket.name;
         }); 
 
-        //res.status(400).send('not found);
+        res.status(400).send({results, names});
 
     });
 };

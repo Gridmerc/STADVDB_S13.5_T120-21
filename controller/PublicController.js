@@ -14,7 +14,7 @@ exports.QueryDisplay = function(req, res){
             return fieldPacket.name;
         }); 
 
-        res.status(400).send({results, names});
+        res.status(400).send({ results, map });
 
     });
 };

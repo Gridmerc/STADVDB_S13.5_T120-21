@@ -15,7 +15,6 @@ $(document).ready(function(){
     };
 
     $('#submit').on('click', function(e){
-        e.stopImmediatePropagation();
         //console.log('click');
 
         const query = $('#query').val();
@@ -24,7 +23,7 @@ $(document).ready(function(){
 
             const modal = $('#mymodal');
             modal.modal('toggle');
-
+            /*
             $.ajax({
                 type:"POST",
                 url: "/QueryDisplay",
@@ -53,10 +52,8 @@ $(document).ready(function(){
                         tableElement.append("<td>sad wala tayong nahanap</td>");
                     }
                 }
-            });
+            }); */
         }
-        return false;
+        //return false;
     });
-
-    $('#submit').trigger('click');
 });

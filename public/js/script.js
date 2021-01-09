@@ -14,8 +14,9 @@ $(document).ready(function(){
 
     };
 
-    $('#submit').on('click',() =>{
-        console.log('click');
+    $('#submit').on('click', function(e){
+        e.stopImmediatePropagation();
+        //console.log('click');
 
         const query = $('#query').val();
         if(validate()){
@@ -56,4 +57,6 @@ $(document).ready(function(){
         }
         return false;
     });
+
+    $('#submit').trigger('click');
 });

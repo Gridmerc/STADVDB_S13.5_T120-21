@@ -2,7 +2,7 @@ const db = require('../database');
 
 /* home page */
 exports.HomePage = function(req, res) {
-    res.render('home.hbs', {title: 'Home'});  
+    res.render('home.hbs', {title: 'The Query List'});  
 };
 /* one table (1) page */
 exports.oneTableOne = function(req, res, next) {

@@ -22,13 +22,10 @@ const db = require('./database');
 db.connect(function(err) {
     if(err) throw err;
     console.log('MySQL connected successfully...');
-<<<<<<< HEAD
     db.query("SELECT * FROM cards", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
       });
-=======
->>>>>>> e63e0090f175f3d3829bc75baa4efbd05e735cdf
 });
 
 //api enpoint data handling

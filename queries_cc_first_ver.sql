@@ -24,11 +24,12 @@ FROM	    CLIENTS C JOIN CARDS CA
 ON		    C.card_category_id = CA.card_id
 WHERE	    CA.card_type = "Platinum";
 
--- 2. Count the number of clients based on their education
+-- 2. Count the number of clients on each education level based on their age
 
 SELECT		COUNT(C.clientID), E.education_type
 FROM		CLIENTS C JOIN EDUCATION_LEVELS E
 ON			C.education_level_id = E.education_id
+WHERE		C.age < 30
 GROUP BY	E.education_type;
 
 -- Three Tables

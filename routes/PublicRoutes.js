@@ -11,5 +11,3 @@ router.get('/twoTablesTwo', PublicController.twoTablesTwo);
 router.get('/threeTablesOne', PublicController.threeTablesOne);
 router.get('/threeTablesTwo', PublicController.threeTablesTwo);
 router.get('/fourTables', PublicController.fourTables);
-
-router.post('/querydisplay', PublicController.QueryDisplay);

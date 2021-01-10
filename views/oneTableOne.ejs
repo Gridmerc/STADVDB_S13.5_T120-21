@@ -33,8 +33,34 @@
             <div class = "row">
                 <button id="submit" style="margin-left:10%; margin-top:1%;" class = "form-control form-control-lg btn btn-outline-dark col-lg-3">Option 1</button>
             </div>
-            
         </form>
+        <div class="table-data-name-age-marital">
+            <h2>CLient Name and ID base from their age</h2>
+                <table border="1">
+                    <tr>
+                        <th>Client name</th>
+                        <th>Client age</th>
+                        <th>Client marital status</th>
+                    </tr>
+                    
+                    <%
+                    if(userData.length!=0){
+                    var i=1;
+                    userData.forEach(function(data){
+                    %>
+                    <tr>
+                        <td><%=data.client_name %></td>
+                        <td><%=data.age %></td>
+                        <td><%=data.marital_status %></td>
+                    </tr>
+                    <%  i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
     </div>
 </body>
 </html>

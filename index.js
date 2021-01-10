@@ -21,6 +21,10 @@ const db = require('./database');
 db.connect(function(err) {
     if(err) throw err;
     console.log('MySQL connected successfully...');
+    db.query("SELECT * FROM credit_clients", function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
+      });
 });
 
 //api enpoint data handling

@@ -34,35 +34,42 @@
                 <button id="submit" style="margin-left:10%; margin-top:1%;" class = "form-control form-control-lg btn btn-outline-dark col-lg-3">Option 1</button>
             </div>
         </form>
-        <div class="table-data-id-name-age">
-            <h2> Display the client ID, client name, age, and total revolving balance based on the education, card type and marital status.
-            </h2>
-                <table border="1">
-                    <tr>
-                        <th>Client ID</th>
-                        <th>Name</th>
-                        <th>total revolving balance</th>
-                        <th>age</th>, 
-                    </tr>
+        <div class="container">
+            <div class="table-data-id-name-age">
+                <h2> Display the client ID, client name, age, and total revolving balance based on the education, card type and marital status.
+                </h2>
+                    <table class="table table-dark table-bordered table-hover table-sm">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Client ID</th>
+                                <th>Name</th>
+                                <th>Total Revolving Balance</th>
+                                <th>Age</th>, 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                            if(userData.length!=0){
+                            var i=1;
+                            userData.forEach(function(data){
+                            %>
+
+                            <tr>
+                                <td><%=data.clientID %></td>
+                                <td><%=data.client_name %></td>
+                                <td><%=data.tot_revolving_bal %></td>
+                                <td><%=data.age %></td>
+                            </tr>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <tr>
+                                    <td colspan="7"> No Data Found </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
                     
-                    <%
-                    if(userData.length!=0){
-                    var i=1;
-                    userData.forEach(function(data){
-                    %>
-                    <tr>
-                        <td><%=data.clientID %></td>
-                        <td><%=data.client_name %></td>
-                        <td><%=data.tot_revolving_bal %></td>
-                        <td><%=data.age %></td>
-                    </tr>
-                    <%  i++; }) %>
-                    <% } else{ %>
-                        <tr>
-                            <td colspan="7">No Data Found</td>
-                        </tr>
-                    <% } %>
-                </table>
+            </div>
         </div>
     </div>
 </body>

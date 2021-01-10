@@ -3,6 +3,7 @@ const express = require('express');
 const handlebars = require('handlebars');
 const path=require('path');
 const bodyparser = require('body-parser');
+const ejs = require('ejs');
 const hbs = require('express-handlebars').create({
     extname: 'hbs',
     defaultView: 'default',
@@ -21,7 +22,7 @@ const db = require('./database');
 db.connect(function(err) {
     if(err) throw err;
     console.log('MySQL connected successfully...');
-    db.query("SELECT * FROM clients", function (err, result, fields) {
+    db.query("SELECT * FROM cards", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
       });
@@ -37,6 +38,7 @@ app.use(bodyparser.urlencoded({ extended: true}));
 app.engine('hbs', hbs.engine); 
 
 app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname,'public')));
 app.use('/', PublicRoutes);

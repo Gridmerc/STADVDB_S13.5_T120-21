@@ -2,41 +2,41 @@ const db = require('../database');
 
 /* home page */
 exports.HomePage = function(req, res) {
-    res.render('home');  
+    res.render('home.hbs', {title: 'Home'});  
 };
 /* one table (1) page */
 exports.oneTableOne = function(req, res) {
-    res.render('oneTableOne');
+    res.render('oneTableOne.hbs', {title: 'One Table'});
 };
 
 /* one table (2) page */
 exports.oneTableTwo = function(req, res) {
-    res.render('oneTableTwo');
+    res.render('oneTableTwo.hbs', {title: 'One Table'});
 };
 
 /* two tables (1) page */
 exports.twoTablesOne = function(req, res) {
-    res.render('twoTablesOne');
+    res.render('twoTablesOne.hbs', {title: 'Two Tables'});
 };
 
 /* two tables (2) page */
 exports.twoTablesTwo = function(req, res) {
-    res.render('twoTablesTwo');
+    res.render('twoTablesTwo.hbs', {title: 'Two Tables'});
 };
 
 /* three tables (1) page */
 exports.threeTablesOne = function(req, res) {
-    res.render('threeTablesOne');
+    res.render('threeTablesOne.hbs', {title: 'Three Tables'});
 };
 
 /* three tables (2) page */
 exports.threeTablesTwo = function(req, res) {
-    res.render('threeTablesTwo');
+    res.render('threeTablesTwo.hbs', {title: 'Three Tables'});
 };
 
 /* four tables page */
 exports.fourTables= function(req, res) {
-    res.render('fourTables');
+    res.render('fourTables.hbs', {title: 'Four Tables'});
 };
 
 exports.QueryDisplay = function(req, res){

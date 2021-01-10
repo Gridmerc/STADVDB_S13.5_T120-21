@@ -4,9 +4,39 @@ const db = require('../database');
 exports.HomePage = function(req, res) {
     res.render('home');  
 };
-/* one table page */
-exports.oneTable = function(req, res) {
-    res.render('oneTable');
+/* one table (1) page */
+exports.oneTableOne = function(req, res) {
+    res.render('oneTableOne');
+};
+
+/* one table (2) page */
+exports.oneTableTwo = function(req, res) {
+    res.render('oneTableTwo');
+};
+
+/* two tables (1) page */
+exports.twoTablesOne = function(req, res) {
+    res.render('twoTablesOne');
+};
+
+/* two tables (2) page */
+exports.twoTablesTwo = function(req, res) {
+    res.render('twoTablesTwo');
+};
+
+/* three tables (1) page */
+exports.threeTablesOne = function(req, res) {
+    res.render('threeTablesOne');
+};
+
+/* three tables (2) page */
+exports.threeTablesTwo = function(req, res) {
+    res.render('threeTablesTwo');
+};
+
+/* four tables page */
+exports.fourTables= function(req, res) {
+    res.render('fourTables');
 };
 
 exports.QueryDisplay = function(req, res){

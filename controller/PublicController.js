@@ -47,7 +47,7 @@ exports.twoTablesOne = function(req, res) {
 
 /* two tables (2) page */
 exports.twoTablesTwo = function(req, res) {
-    var sql = "SELECT COUNT(C.clientID), E.education_type FROM CLIENTS C JOIN EDUCATION_LEVELS E ON	C.education_level_id = E.education_id WHERE	C.age < 30 GROUP BY	E.education_type;";
+    var sql = "SELECT COUNT(C.clientID) AS 'count' , E.education_type AS 'eductype' FROM CLIENTS C JOIN EDUCATION_LEVELS E ON	C.education_level_id = E.education_id WHERE	C.age < 30 GROUP BY	E.education_type;";
     db.query(sql,function(err, data, fields){
         if(err) throw err;
         res.render('twoTablesTwo.ejs', {title: 'Two Tables', userData: data});
@@ -56,7 +56,7 @@ exports.twoTablesTwo = function(req, res) {
 
 /* three tables (1) page */
 exports.threeTablesOne = function(req, res) {
-    var sql ="SELECT		AVG(age) AS 'AVERAGE AGE' "
+    var sql ="SELECT		AVG(age) AS 'AvgAge' "
     +"FROM		CLIENTS C JOIN INCOMES I "
     +"ON			C.income_category_id = I.income_id "
     +"JOIN		CARDS CA "
@@ -71,7 +71,7 @@ exports.threeTablesOne = function(req, res) {
 
 /* three tables (2) page */
 exports.threeTablesTwo = function(req, res) {
-    var sql = "SELECT		SUM(CI.tot_trans_count) AS 'Sum of Transaction Count' "
+    var sql = "SELECT		SUM(CI.tot_trans_count) AS 'SumofTransactionCount' , E.education_type AS 'eductype'"
     +"FROM		CLIENTS C "
     +"JOIN		EDUCATION_LEVELS E "
     +"ON			C.education_level_id = E.education_id "

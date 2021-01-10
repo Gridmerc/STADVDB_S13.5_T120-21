@@ -26,7 +26,7 @@ WHERE	    CA.card_type = "Platinum";
 
 -- 2. Count the number of clients on each education level based on their age
 
-SELECT		COUNT(C.clientID), E.education_type
+SELECT		COUNT(C.clientID) AS 'count' , E.education_type AS 'eductype' 
 FROM		CLIENTS C JOIN EDUCATION_LEVELS E
 ON			C.education_level_id = E.education_id
 WHERE		C.age < 30
@@ -36,7 +36,7 @@ GROUP BY	E.education_type;
 
 -- 1. Get the average age of clients who have an income status of $60K - $80K and having a Gold card.
 
-SELECT		AVG(age) AS 'AVERAGE AGE'
+SELECT		AVG(age) AS 'AVERAGE AGE' AS 'AvgAge' 
 FROM		CLIENTS C JOIN INCOMES I
 ON			C.income_category_id = I.income_id
 JOIN		CARDS CA
@@ -46,7 +46,7 @@ AND			CA.card_type = "Gold";
 
 -- 2. Get the sum of total transaction count from clients that are college students.
 
-SELECT		SUM(CI.tot_trans_count) AS 'Sum of Transaction Count'
+SELECT		SUM(CI.tot_trans_count) AS 'SumofTransactionCount' , E.education_type AS 'eductype'
 FROM		CLIENTS C
 JOIN		EDUCATION_LEVELS E
 ON			C.education_level_id = E.education_id

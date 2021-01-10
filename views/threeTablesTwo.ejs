@@ -34,29 +34,36 @@
                 <button id="submit" style="margin-left:10%; margin-top:1%;" class = "form-control form-control-lg btn btn-outline-dark col-lg-3">Option 1</button>
             </div>
         </form>
-        <div class="table-data-sum">
-            <h2>Sum of total transaction count from client</h2>
-                <table border="1">
-                    <tr>
-                        <th>Client ID</th>
-                        <th>Client Name</th>
-                    </tr>
-                    
-                    <%
-                    if(userData.length!=0){
-                    var i=1;
-                    userData.forEach(function(data){
-                    %>
-                    <tr>
-                        <td><%=data.SUM(CI.tot_trans_count) %></td>
-                    </tr>
-                    <%  i++; }) %>
-                    <% } else{ %>
-                        <tr>
-                            <td colspan="7">No Data Found</td>
-                        </tr>
-                    <% } %>
-                </table>
+        <div class="container">
+            <div class="table-data-sum">
+                <h2 style="text-align: center;"> Sum of total transaction count from clients that are college students</h2>
+                <table class="table table-dark table-bordered table-hover table-sm">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Total Transaction Count</th>
+                                <th>Education Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                            if(userData.length!=0){
+                            var i=1;
+                            userData.forEach(function(data){
+                            %>
+
+                            <tr>
+                                <td><%=data.SumofTransactionCount%></td>
+                                <td><%=data.eductype%></td>
+                            </tr>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <tr>
+                                    <td colspan="7"> No Data Found </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+            </div>  
         </div>
     </div>
 </body>

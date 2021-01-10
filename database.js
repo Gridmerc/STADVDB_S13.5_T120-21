@@ -5,6 +5,6 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'p@ssword',
     port: '3306',
-    database: 'northwind'
+    database: 'creditcards'
 });
 module.exports = db;

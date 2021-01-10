@@ -1,0 +1,29 @@
+<html lang="en">
+<body>
+    <div class="table-data">
+<h2>CLient Name and ID base from their card type</h2>
+    <table border="1">
+        <tr>
+            <th>Client ID</th>
+            <th>Client Name</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.clientID %></td>
+            <td><%=data.client_name %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>

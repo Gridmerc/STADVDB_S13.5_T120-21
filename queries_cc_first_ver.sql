@@ -5,24 +5,24 @@
 
 -- 1. List the names of clients, age and marital status based on age.
 
-SELECT client_name, age, marital_status
-FROM CLIENTS
-WHERE age < 30;
+SELECT      client_name, age, marital_status
+FROM        CLIENTS
+WHERE       age < 30;
 
 -- 2. List the names of clients based on the number of dependents.
 
-SELECT clientID, client_name
-FROM CLIENTS
-WHERE dependent_count = 1;
+SELECT      clientID, client_name
+FROM        CLIENTS
+WHERE       dependent_count = 1;
 
 -- Two Tables
 
 -- 1. List the client ID and names based on their card.
 
-SELECT	clientID, client_name
-FROM	CLIENTS C JOIN CARDS CA
-ON		C.card_category_id = CA.card_id
-WHERE	CA.card_type = "Platinum";
+SELECT	    clientID, client_name
+FROM	    CLIENTS C JOIN CARDS CA
+ON		    C.card_category_id = CA.card_id
+WHERE	    CA.card_type = "Platinum";
 
 -- 2. Count the number of clients based on their education
 

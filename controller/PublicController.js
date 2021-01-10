@@ -6,11 +6,11 @@ exports.HomePage = function(req, res) {
 };
 /* one table (1) page */
 exports.oneTableOne = function(req, res, next) {
-    var sql = 'SELECT client_name, age, marital_status FROM CLIENTS WHERE age <'+'30' ;
-    db.query(sql,function(err,data,fields){
+    var sql = 'SELECT client_name, age, marital_status FROM CLIENTS WHERE age <' + '30';
+    db.query(sql,function(err, data, fields){
         if(err) throw err;
-    res.render('oneTableOne', {title: 'One Table', userData: data});
-    })
+        res.render('oneTableOne', {title: 'One Table', userData: data});
+    });
 };
 
 /* one table (2) page */

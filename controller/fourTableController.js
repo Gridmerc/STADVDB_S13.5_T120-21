@@ -13,7 +13,7 @@ const fourTableController = {
         
     },
     postFourTable: function(req, res) {
-        let card_type = req.body.card_type;
+        let card_type = req.body.card;
         let education_type = req.body.education_type;
         let marital_status = req.body.marital_status;
         var sql1 = "SELECT C.clientID, C.client_name, CI.tot_revolving_bal, C.age FROM	CLIENTS C JOIN	CREDIT_INFOS CI ON	C.clientID = CI.clientID JOIN CARDS CA ";

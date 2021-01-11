@@ -1,11 +1,11 @@
 const db = require('../database');
 
-const threeTableController = {
+const fourTableController = {
     getFourTables : function(req, res) {
-        var sql = "SELECT C.clientID, C.client_name, CI.tot_revolving_bal, C.age FROM	CLIENTS C JOIN	CREDIT_INFOS CI ON	C.clientID = CI.clientID JOIN CARDS CA ";
+        var sql1 = "SELECT C.clientID, C.client_name, CI.tot_revolving_bal, C.age FROM	CLIENTS C JOIN	CREDIT_INFOS CI ON	C.clientID = CI.clientID JOIN CARDS CA ";
         var sql2 = "ON	C.card_category_id = CA.card_id JOIN EDUCATION_LEVELS E ON C.education_level_id = E.education_id WHERE	E.education_type = 'Graduate'";
         var sql3 = "AND	CA.card_type = 'Gold' AND C.marital_status = 'Single';";
-        sql = sql + " " + sql2 + " "+ sql3;
+        var sql = sql1 + " " + sql2 + " "+ sql3;
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             res.render('fourTables.ejs', {title: 'FourTables', userData: data});
@@ -13,17 +13,16 @@ const threeTableController = {
         
     },
     postFourTable: function(req, res) {
+        let card_type = req.body.card_type;
         let education_type = req.body.education_type;
-        var sql = "SELECT		SUM(CI.tot_trans_count) AS 'SumofTransactionCount' , E.education_type AS 'eductype'"
-        +"FROM		CLIENTS C "
-        +"JOIN		EDUCATION_LEVELS E "
-        +"ON			C.education_level_id = E.education_id "
-        +"JOIN		CREDIT_INFOS CI "
-        +"ON			C.clientID = CI.clientID "
-        +"WHERE		E.education_type = "+ education_type + ";";
+        let marital_status = req.body.marital_status;
+        var sql1 = "SELECT C.clientID, C.client_name, CI.tot_revolving_bal, C.age FROM	CLIENTS C JOIN	CREDIT_INFOS CI ON	C.clientID = CI.clientID JOIN CARDS CA ";
+        var sql2 = "ON	C.card_category_id = CA.card_id JOIN EDUCATION_LEVELS E ON C.education_level_id = E.education_id WHERE	E.education_type = " +  "'" + education_type + "'";
+        var sql3 = "AND	CA.card_type = " + "'" + card_type + "'" + " AND C.marital_status = "+ "'" +marital_status + "'"+";";
+        var sql = sql1 + " " + sql2 + " "+ sql3;
         db.query(sql,function(err, data, fields){
             if(err) throw err;
-            res.render('threeTablesTwo.ejs', {title: 'Three Tables', userData: data});
+            res.render('fourTables.ejs', {title: 'Three Tables', userData: data});
         });    
     }
 }

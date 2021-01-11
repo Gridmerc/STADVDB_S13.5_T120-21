@@ -28,15 +28,17 @@
         </div>
     </nav>
     <div>
-        <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;">Two Tables One</h1>
-        <form>
+        <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;"> Two Tables - First Query </h1>
+        <form method= "POST" action="/twoTablesOne">
             <div class = "row">
-                <button id="submit" style="margin-left:10%; margin-top:1%;" class = "form-control form-control-lg btn btn-outline-dark col-lg-3">Option 1</button>
+                <label for="card"> Card: </label>
+                <input type ="text" placeholder = "Blue/Silver/Gold/Platinum" style="margin-left:10%; margin-top:1%;" name ="card">
+                <input type="submit" style="margin-left:1%;">
             </div>
         </form>
         <div class="container">
             <div class="table-data-name-id-two">
-                <h2 style="text-align: center;"> Client Name and ID base from their card type</h2>
+                <h2 style="text-align: center;"> Client Name and ID Based on Card Type </h2>
                     <table class="table table-dark table-bordered table-hover table-sm">
                         <thead class="thead-dark">
                             <tr>

@@ -7,8 +7,6 @@ const oneTableController = require('../controller/oneTableController');
 const twoTableController = require('../controller/twoTableController');
 
 router.get('/', PublicController.HomePage);
-router.get('/twoTablesOne', PublicController.twoTablesOne);
-router.get('/twoTablesTwo', PublicController.twoTablesTwo);
 router.get('/threeTablesOne', PublicController.threeTablesOne);
 router.get('/threeTablesTwo', PublicController.threeTablesTwo);
 router.get('/fourTables', PublicController.fourTables);

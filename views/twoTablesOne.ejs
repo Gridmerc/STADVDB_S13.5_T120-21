@@ -31,11 +31,15 @@
         <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;"> Two Tables - First Query </h1>
         <form method= "POST" action="/twoTablesOne">
             <div class = "row">
-                <label for="card"> Card: </label>
-                <input type ="text" placeholder = "Blue/Silver/Gold/Platinum" style="margin-left:10%; margin-top:1%;" name ="card">
+                <select name="card" style="margin-left: 1%; margin-bottom: 2%;">
+                    <option value="Blue"> Blue </option>
+                    <option value="Silver"> Silver </option>
+                    <option value="Gold"> Gold </option>
+                    <option value="Platinum"> Platinum </option>
+                </select>
                 <input type="submit" style="margin-left:1%;">
             </div>
-        </form>
+            <form method= "POST" action="/twoTableOne">
         <div class="container">
             <div class="table-data-name-id-two">
                 <h2 style="text-align: center;"> Client Name and ID Based on Card Type </h2>

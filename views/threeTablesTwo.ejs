@@ -29,14 +29,22 @@
     </nav>
     <div>
         <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;">Three Tables Two</h1>
-        <form>
+        <form method= "POST" action="/threeTableTwo">
             <div class = "row">
-                <button id="submit" style="margin-left:10%; margin-top:1%;" class = "form-control form-control-lg btn btn-outline-dark col-lg-3">Option 1</button>
-            </div>
+                <select name="education-type" style="margin-left: 1%; margin-bottom: 2%;">
+                    <option value="Uneducated"> Uneducated </option>
+                    <option value="High School"> High School </option>
+                    <option value="College"> College </option>
+                    <option value="Graduate"> Graduate </option>
+                    <option value="Post-Graduate">  Post-Graduate </option>
+                    <option value="Doctorate">  Doctorate </option>
+                    <option value="Unknown"> Unknown </option>
+                </select>
+                <input type="submit" style="margin-left:1%;"></div>
         </form>
         <div class="container">
             <div class="table-data-sum">
-                <h2 style="text-align: center;"> Sum of total transaction count from clients that are college students</h2>
+                <h2 style="text-align: center;"> Sum of total transaction count from clients base from education level</h2>
                 <table class="table table-dark table-bordered table-hover table-sm">
                         <thead class="thead-dark">
                             <tr>

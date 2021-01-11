@@ -29,32 +29,34 @@
         </nav>
         <div>
             <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;"> Last Table </h1>
-            <form method= "POST" action="/fourTables">
-                <div class = "row">
-                <select name="education_type" style="margin-left: 1%; margin-bottom: 2%;">
-                    <option value="Uneducated"> Uneducated </option>
-                    <option value="High School"> High School </option>
-                    <option value="College"> College </option>
-                    <option value="Graduate"> Graduate </option>
-                    <option value="Post-Graduate">  Post-Graduate </option>
-                    <option value="Doctorate">  Doctorate </option>
-                    <option value="Unknown"> Unknown </option>
-                </select> 
-                <select name="card" style="margin-left: 1%; margin-bottom: 2%;">
-                    <option value="Blue"> Blue </option>
-                    <option value="Silver"> Silver </option>
-                    <option value="Gold"> Gold </option>
-                    <option value="Platinum"> Platinum </option>
-                </select>
-                <select name="marital_status" style="margin-left: 1%; margin-bottom: 2%;">
-                    <option value="Divorced"> Divorced </option>
-                    <option value="Single"> Single </option>
-                    <option value="Married"> Married </option>
-                    <option value="Unknown"> Unknown </option>
-                </select>
-                <input type="submit" style="margin-left:1%;">
+            <div class="container">
+                <form method= "POST" action="/fourTables">
+                    <div class = "row">
+                        <select name="education_type" style="margin-left: 1%; margin-bottom: 2%;">
+                            <option value="Uneducated"> Uneducated </option>
+                            <option value="High School"> High School </option>
+                            <option value="College"> College </option>
+                            <option value="Graduate"> Graduate </option>
+                            <option value="Post-Graduate">  Post-Graduate </option>
+                            <option value="Doctorate">  Doctorate </option>
+                            <option value="Unknown"> Unknown </option>
+                        </select> 
+                        <select name="card" style="margin-left: 1%; margin-bottom: 2%;">
+                            <option value="Blue"> Blue </option>
+                            <option value="Silver"> Silver </option>
+                            <option value="Gold"> Gold </option>
+                            <option value="Platinum"> Platinum </option>
+                        </select>
+                        <select name="marital_status" style="margin-left: 1%; margin-bottom: 2%;">
+                            <option value="Divorced"> Divorced </option>
+                            <option value="Single"> Single </option>
+                            <option value="Married"> Married </option>
+                            <option value="Unknown"> Unknown </option>
+                        </select>
+                        <input type="submit" style="margin-left:1%;">
+                    </div>
+                </form>
             </div>
-            </form>
             <div class="container">
                 <div class="table-data-id-name-age">
                     <h2> Display the client ID, client name, age, and total revolving balance based on the education, card type and marital status.

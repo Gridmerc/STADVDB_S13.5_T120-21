@@ -36,7 +36,7 @@ GROUP BY	E.education_type;
 
 -- 1. Get the average age of clients who have an income status of $60K - $80K and having a Gold card.
 
-SELECT		AVG(age) AS 'AVERAGE AGE' AS 'AvgAge' 
+SELECT		AVG(age)  AS 'AvgAge' 
 FROM		CLIENTS C JOIN INCOMES I
 ON			C.income_category_id = I.income_id
 JOIN		CARDS CA

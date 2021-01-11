@@ -37,11 +37,12 @@ const threeTableController = {
         +"ON			C.income_category_id = I.income_id "
         +"JOIN		CARDS CA "
         +"ON			C.card_category_id = CA.card_id "
-        +"WHERE		I.income_type = " + income_type
-        +"AND			CA.card_type = " + card + ";";
+        +"WHERE		I.income_type = '" + income_type + "' "
+        +"AND			CA.card_type = '" + card + "';";
         db.query(sql, function(err, data) {
             if(err) throw err;
             res.render('threeTablesOne.ejs', {title: 'Two Table - First Query', userData: data});
+            console.log(sql);
         });
     },
 

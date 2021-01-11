@@ -28,42 +28,47 @@
         </div>
     </nav>
     <div>
-        <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;">One Table Two</h1>
-        <form>
+        <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;"> One Table - Second Query </h1>
+        <form method= "POST" action="/oneTableTwo">
             <div class = "row">
-                <button id="submit" style="margin-left:10%; margin-top:1%;" class = "form-control form-control-lg btn btn-outline-dark col-lg-3">Option 1</button>
+                <label for="dependents"> Number of Dependents: </label>
+                <input type ="number" placeholder = "10" style="margin-left:10%; margin-top:1%;" name ="dependents">
+                <select name="comparison" style="margin-left: 1%; margin-bottom: 2%;">
+                    <option value=">"> More than </option>
+                    <option value="<"> Less than </option>
+                    <option value="="> Equal to </option>
+                </select>
+                <input type="submit" style="margin-left:1%;">
             </div>
         </form>
         <div class="container">
             <div class="table-data-name-ID-one">
-                <h2>CLient Name and ID base from number of dependents</h2>
-                    <table class="table table-dark table-bordered table-hover table-sm">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Client ID</th>
-                                <th>Client Name</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <%
-                            if(userData.length!=0){
-                            var i=1;
-                            userData.forEach(function(data){
-                            %>
-
-                            <tr>
-                                <td><%=data.clientID %></td>
-                                <td><%=data.client_name %></td>
-                            </tr>
-                            <%  i++; }) %>
-                            <% } else{ %>
-                                <tr>
-                                    <td colspan="7"> No Data Found </td>
-                                </tr>
-                            <% } %>
-                        </tbody>
-                    </table>
-                
+                <h2 style="text-align: center;"> Client Name and ID Based from Number of Dependents </h2>
+                <table class="table table-dark table-bordered table-hover table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Client ID</th>
+                            <th>Client Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                        if(userData.length!=0){
+                        var i=1;
+                        userData.forEach(function(data){
+                        %>
+                        <tr>
+                            <td><%= data.clientID %></td>
+                            <td><%= data.client_name %></td>
+                        </tr>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                        <tr>
+                            <td colspan="7"> No Data Found </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>   
             </div>
         </div>
     </div>

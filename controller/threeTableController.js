@@ -42,7 +42,6 @@ const threeTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             res.render('threeTablesOne.ejs', {title: 'Two Table - First Query', userData: data});
-            console.log(sql);
         });
     },
 
@@ -54,7 +53,7 @@ const threeTableController = {
         +"ON			C.education_level_id = E.education_id "
         +"JOIN		CREDIT_INFOS CI "
         +"ON			C.clientID = CI.clientID "
-        +"WHERE		E.education_type = "+ education_type + ";";
+        +"WHERE		E.education_type = '"+ education_type + "';";
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             res.render('threeTablesTwo.ejs', {title: 'Three Tables', userData: data});

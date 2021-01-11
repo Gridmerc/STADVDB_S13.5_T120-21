@@ -41,7 +41,7 @@ const threeTableController = {
         +"AND			CA.card_type = " + card + ";";
         db.query(sql, function(err, data) {
             if(err) throw err;
-            res.render('threeTableOne.ejs', {title: 'Two Table - First Query', userData: data});
+            res.render('threeTablesOne.ejs', {title: 'Two Table - First Query', userData: data});
         });
     },
 

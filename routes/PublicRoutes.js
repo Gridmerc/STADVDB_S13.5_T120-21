@@ -9,8 +9,8 @@ const threeTablecontroller =  require('../controller/threeTableController');
 router.get('/', PublicController.HomePage);
 router.get('/fourTables', PublicController.fourTables);
 
-router.get('/threeTableOne', threeTablecontroller.getThreeTablesOne);
-router.get('/threeTableTwo', threeTablecontroller.getThreeTablesTwo);
+router.get('/threeTablesOne', threeTablecontroller.getThreeTablesOne);
+router.get('/threeTablesTwo', threeTablecontroller.getThreeTablesTwo);
 router.get('/oneTableOne', oneTableController.getOneTableOne);
 router.get('/oneTableTwo', oneTableController.getOneTableTwo);
 router.get('/twoTablesOne', twoTableController.getTwoTableOne);
@@ -20,5 +20,5 @@ router.post('/oneTableOne', oneTableController.postOneTableOne);
 router.post('/oneTableTwo', oneTableController.postOneTableTwo);
 router.post('/twoTablesOne', twoTableController.postTwoTableOne);
 router.post('/twoTablesTwo', twoTableController.postTwoTableTwo);
-router.post('/threeTableOne', threeTablecontroller.postThreeTableOne);
-router.post('/threeTableTwo', threeTablecontroller.postThreeTableTwo);
+router.post('/threeTablesOne', threeTablecontroller.postThreeTableOne);
+router.post('/threeTablesTwo', threeTablecontroller.postThreeTableTwo);

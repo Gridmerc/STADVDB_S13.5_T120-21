@@ -29,18 +29,20 @@
         </nav>
         <div>
         <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;"> One Table - First Query </h1>
-        <form method= "POST" action="/oneTableOne">
-            <div class = "row">
-                <label for="age"> Age: </label>
-                <input type ="number" style="margin-left:10%; margin-top:1%;" name ="age">
-                <select name="comparison" style="margin-left: 1%; margin-bottom: 2%;">
-                    <option value=">"> More than </option>
-                    <option value="<"> Less than </option>
-                    <option value="="> Equal to </option>
-                </select>
-                <input type="submit" style="margin-left:1%;">
-            </div>
-        </form>
+        <div class="container">
+            <form method= "POST" action="/oneTableOne">
+                <div class = "row">
+                    <label for="age"> Age: </label>
+                    <input type ="number" style="margin-left:10%; margin-top:1%;" name ="age">
+                    <select name="comparison" style="margin-left: 1%; margin-bottom: 2%;">
+                        <option value=">"> More than </option>
+                        <option value="<"> Less than </option>
+                        <option value="="> Equal to </option>
+                    </select>
+                    <input type="submit" style="margin-left:1%;">
+                </div>
+            </form>
+        </div>
         <div class="container">
             <div class="table-data-name-age-marital">
                 <h2 style="text-align: center;"> Client Name, Age and Marital Status Based from Age </h2>

@@ -29,18 +29,20 @@
     </nav>
     <div>
         <h1 style="margin-left:10%; margin-top:5%; font-family:Courier New;"> One Table - Second Query </h1>
-        <form method= "POST" action="/oneTableTwo">
-            <div class = "row">
-                <label for="dependents"> Number of Dependents: </label>
-                <input type ="number" placeholder = "10" style="margin-left:10%; margin-top:1%;" name ="dependents">
-                <select name="comparison" style="margin-left: 1%; margin-bottom: 2%;">
-                    <option value=">"> More than </option>
-                    <option value="<"> Less than </option>
-                    <option value="="> Equal to </option>
-                </select>
-                <input type="submit" style="margin-left:1%;">
-            </div>
-        </form>
+        <div class="container">
+            <form method= "POST" action="/oneTableTwo">
+                <div class = "row">
+                    <label for="dependents"> Number of Dependents: </label>
+                    <input type ="number" placeholder = "10" style="margin-left:10%; margin-top:1%;" name ="dependents">
+                    <select name="comparison" style="margin-left: 1%; margin-bottom: 2%;">
+                        <option value=">"> More than </option>
+                        <option value="<"> Less than </option>
+                        <option value="="> Equal to </option>
+                    </select>
+                    <input type="submit" style="margin-left:1%;">
+                </div>
+            </form>
+        </div>
         <div class="container">
             <div class="table-data-name-ID-one">
                 <h2 style="text-align: center;"> Client Name and ID Based from Number of Dependents </h2>

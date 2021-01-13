@@ -8,7 +8,8 @@ const twoTableController = {
                   'WHERE CA.card_type = "Platinum";';
         db.query(sql, function(err, data) {
             if(err) throw err;
-            res.render('twoTablesOne.ejs', {title: 'Two Table - First Query', userData: data});
+            console.log('APP: Entered Third Query');
+            res.render('twoTablesOne.ejs', {title: 'Two Tables - First Query', userData: data});
         });
     },
 
@@ -19,7 +20,8 @@ const twoTableController = {
                   'GROUP BY E.education_type;';
         db.query(sql, function(err, data) {
             if(err) throw err;
-            res.render('twoTablesTwo.ejs', {title: 'One Table - Second Query', userData: data});
+            console.log('APP: Entered Fourth Query');
+            res.render('twoTablesTwo.ejs', {title: 'Two Tables - Second Query', userData: data});
         });
     },
 
@@ -31,7 +33,8 @@ const twoTableController = {
                   'WHERE CA.card_type = ' + '"' + card + '"' + ';';
         db.query(sql, function(err, data) {
             if(err) throw err;
-            res.render('twoTablesOne.ejs', {title: 'Two Table - First Query', userData: data});
+            console.log('MySQL: Third Query Detected');
+            res.render('twoTablesOne.ejs', {title: 'Two Tables - First Query', userData: data});
         });
     },
 
@@ -44,7 +47,8 @@ const twoTableController = {
                   'GROUP BY E.education_type;';
         db.query(sql, function(err, data) {
             if(err) throw err;
-            res.render('twoTablesTwo.ejs', {title: 'Two Table - Second Query', userData: data});
+            console.log('MySQL: Fourth Query Detected');
+            res.render('twoTablesTwo.ejs', {title: 'Two Tables - Second Query', userData: data});
         });
     }
 }

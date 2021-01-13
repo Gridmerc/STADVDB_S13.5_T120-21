@@ -1,14 +1,7 @@
+// Modules
 const mysql = require('mysql');
-/*
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'p@ssword',
-    port: '3306',
-    database: 'creditcards'
-});
-*/
 
+// Database contain multiple parameters
 const db = mysql.createConnection({
     host: 'us-cdbr-east-02.cleardb.com',
     user: 'b544cbd4569ff0',

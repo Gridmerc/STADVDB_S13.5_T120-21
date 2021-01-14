@@ -9,7 +9,7 @@ const twoTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('APP: Entered Third Query');
-            res.render('twoTablesOne.ejs', {title: 'Two Tables - First Query', userData: data});
+            res.render('unoptimized_3.ejs', {title: 'Two Tables - First Query', userData: data});
         });
     },
 
@@ -21,7 +21,7 @@ const twoTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('APP: Entered Fourth Query');
-            res.render('twoTablesTwo.ejs', {title: 'Two Tables - Second Query', userData: data});
+            res.render('unoptimized_4.ejs', {title: 'Two Tables - Second Query', userData: data});
         });
     },
 
@@ -34,7 +34,7 @@ const twoTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('MySQL: Third Query Detected');
-            res.render('twoTablesOne.ejs', {title: 'Two Tables - First Query', userData: data});
+            res.render('unoptimized_3.ejs', {title: 'Two Tables - First Query', userData: data});
         });
     },
 
@@ -48,7 +48,7 @@ const twoTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('MySQL: Fourth Query Detected');
-            res.render('twoTablesTwo.ejs', {title: 'Two Tables - Second Query', userData: data});
+            res.render('unoptimized_4.ejs', {title: 'Two Tables - Second Query', userData: data});
         });
     }
 }

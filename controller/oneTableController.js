@@ -8,7 +8,7 @@ const oneTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('APP: Entered First Query');
-            res.render('oneTableOne.ejs', {title: 'One Table - First Query', userData: data});
+            res.render('unoptimized_1.ejs', {title: 'One Table - First Query', userData: data});
         });
     },
 
@@ -19,7 +19,7 @@ const oneTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('APP: Entered Second Query');
-            res.render('oneTableTwo.ejs', {title: 'One Table - Second Query', userData: data});
+            res.render('unoptimized_2.ejs', {title: 'One Table - Second Query', userData: data});
         });
     },
 
@@ -32,7 +32,7 @@ const oneTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('MySQL: First Query Detected');
-            res.render('oneTableOne.ejs', {title: 'One Table - First Query', userData: data});
+            res.render('unoptimized_1.ejs', {title: 'One Table - First Query', userData: data});
         });
     },
 
@@ -45,7 +45,7 @@ const oneTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('MySQL: Second Query Detected');
-            res.render('oneTableTwo.ejs', {title: 'One Table - Second Query', userData: data});
+            res.render('unoptimized_2.ejs', {title: 'One Table - Second Query', userData: data});
         });
     }
 }

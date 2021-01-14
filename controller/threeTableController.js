@@ -13,7 +13,7 @@ const threeTableController = {
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             console.log('APP: Entered Fifth Query');
-            res.render('threeTablesOne.ejs', {title: 'Three Tables - First Query', userData: data});
+            res.render('unoptimized_5.ejs', {title: 'Three Tables - First Query', userData: data});
         });
     },
 
@@ -28,7 +28,7 @@ const threeTableController = {
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             console.log('APP: Entered Sixth Query');
-            res.render('threeTablesTwo.ejs', {title: 'Three Tables - Second Query', userData: data});
+            res.render('unoptimized_6.ejs', {title: 'Three Tables - Second Query', userData: data});
         });
     },
 
@@ -45,7 +45,7 @@ const threeTableController = {
         db.query(sql, function(err, data) {
             if(err) throw err;
             console.log('MySQL: Fifth Query Detected');
-            res.render('threeTablesOne.ejs', {title: 'Three Tables - First Query', userData: data});
+            res.render('unoptimized_5.ejs', {title: 'Three Tables - First Query', userData: data});
         });
     },
 
@@ -61,7 +61,7 @@ const threeTableController = {
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             console.log('MySQL: Sixth Query Detected');
-            res.render('threeTablesTwo.ejs', {title: 'Three Tables - Second Query', userData: data});
+            res.render('unoptimized_6.ejs', {title: 'Three Tables - Second Query', userData: data});
         });    
     }
 }

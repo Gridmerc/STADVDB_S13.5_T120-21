@@ -10,7 +10,7 @@ const fourTableController = {
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             console.log('APP: Entered Seventh Query');
-            res.render('fourTables.ejs', {title: 'Four Tables', userData: data});
+            res.render('unoptimized_7.ejs', {title: 'Four Tables', userData: data});
         });
         
     },
@@ -26,7 +26,7 @@ const fourTableController = {
         db.query(sql,function(err, data, fields){
             if(err) throw err;
             console.log('MySQL: Seventh Query Detected');
-            res.render('fourTables.ejs', {title: 'Four Tables', userData: data});
+            res.render('unoptimized_7.ejs', {title: 'Four Tables', userData: data});
         });    
     }
 }

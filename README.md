@@ -9,6 +9,7 @@ Each folder in the repository has its own functions to make the project run prop
 - controller - This folder contains files which defines the callback function for a given client request.
 - public - This folder contains static files.
 - queries - This folder contains all the SQL files that can be run in MySQL Workbench which is our basis for the queries in the application.
+- query_testing - This folder contains all the SQL files that are the test scripts for the dataset.
 - routes - This folder contains a file which describes the response of the server for GET/POST request to a specific path in the server.
 - views - This folder contains all files to be rendered to the user when requested from the server.
 

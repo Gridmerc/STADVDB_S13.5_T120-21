@@ -25,7 +25,28 @@ You will need the following:
 1. Node.js
 2. MySQL
 
-## Getting Started
+## Getting Started - MySQL
+
+If you wish to run the application via localhost, you need to have the schema stored locally in your computer.
+
+1. Open the MySQL Workbench or any application that can handle MySQL.
+2. Import the original schema, Credit_Card_Schema.sql, and modified schema, Credit_Card_V2_Schema.sql.
+3. Head to database.js and remove the comment of the correspond schema you wish to access. Add comment braces to the ClearDB when changing databases.
+4. If you have an `ERR_AUTHEN` error when running the web application, follow the steps below.
+
+### Error Fix on ERR_AUTHEN
+
+1. Open your MySQL Workbench or any application that can handle MySQL.
+2. Run the queries:
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'p@ssword';
+FLUSH privileges;
+```
+What it will do will refresh the root account with the password, p@ssword and it will restart the whole workbench to activate.
+
+If you have other problems, consult the authors of the web application.
+
+## Getting Started - Web Application
 
 1. Clone the repository either through downloading here in GitHub, or use the command below. Please note that Git must be installed in your system for this to work if you choose the latter option.
 ```

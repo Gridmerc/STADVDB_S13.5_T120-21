@@ -37,7 +37,7 @@ git clone https://github.com/Gridmerc/STADVDB_S13.5_T120-21
 4. Run the command, `node index.js` to start up the server. Alternatively, since nodemon is installed, you may opt to use `npm run dev` to allow the server to restart on its own if there are changes in the code.
 5. When the application is running, you must see the following:
 ```
-APP: Listening at Port 5000
+APP: Running at Port 5000
 MySQL: Connected
 ```
 6. Head to your browser and head to the URL, `http://localhost:5000/`.

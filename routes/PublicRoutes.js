@@ -13,6 +13,9 @@ const FourTablesController = require('../controller/fourTableController');
 router.get('/', HomeController.getHome);
 router.get('/home', HomeController.getHome);
 
+// Route for about
+router.get('/about', HomeController.getAbout);
+
 // Routes for queries with one table
 router.get('/oneTableOne', OneTableController.getOneTableOne);
 router.get('/oneTableTwo', OneTableController.getOneTableTwo);
